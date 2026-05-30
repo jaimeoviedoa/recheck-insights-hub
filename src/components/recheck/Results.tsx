@@ -1,18 +1,3 @@
-const positives = [
-  { w: "great", n: 6646 },
-  { w: "service", n: 3681 },
-  { w: "love", n: 3096 },
-  { w: "delicious", n: 3084 },
-  { w: "chicken", n: 2205 },
-];
-const negatives = [
-  { w: "service", n: 4903 },
-  { w: "ask", n: 3817 },
-  { w: "wait", n: 3693 },
-  { w: "minute", n: 3300 },
-  { w: "bad", n: 3207 },
-];
-
 const topics = [
   { i: 1, words: "food · not · order · would · well · say · place", label: "Experiencia general negativa" },
   { i: 2, words: "food · not · order · get · time · wait · say · service", label: "Tiempo y servicio" },
@@ -20,24 +5,7 @@ const topics = [
   { i: 4, words: "not · taco · order · food · burrito · like · bean · chicken", label: "Producto específico" },
 ];
 
-function Bar({ w, n, max, color }: { w: string; n: number; max: number; color: string }) {
-  const pct = (n / max) * 100;
-  return (
-    <div>
-      <div className="flex justify-between text-sm mb-1.5">
-        <span className="font-medium">{w}</span>
-        <span className="font-mono text-xs text-muted-foreground">{n.toLocaleString()}</span>
-      </div>
-      <div className="h-2.5 rounded-full bg-foreground/5 overflow-hidden">
-        <div className="h-full rounded-full transition-all duration-700" style={{ width: `${pct}%`, background: color }} />
-      </div>
-    </div>
-  );
-}
-
 export function Results() {
-  const maxPos = Math.max(...positives.map((p) => p.n));
-  const maxNeg = Math.max(...negatives.map((p) => p.n));
   return (
     <section id="resultados" className="px-6 py-24 max-w-7xl mx-auto">
       <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground">03. Resultados y Cierre</p>
@@ -87,55 +55,6 @@ export function Results() {
           👉 Acción: protocolo de gestión de turnos + seguimiento semanal de service
         </p>
         <p className="text-sm mt-2 text-muted-foreground italic">Esto no es un análisis. Es una decisión.</p>
-      </div>
-
-      {/* Lo que los datos nos enseñaron */}
-      <h3 className="font-display font-semibold text-2xl mt-14">LO QUE LOS DATOS NOS ENSEÑARON</h3>
-      <p className="text-muted-foreground mt-2 text-sm">Procesamos 127.000 reseñas de restaurantes mexicanos</p>
-
-      <div className="grid lg:grid-cols-2 gap-6 mt-6">
-        <div className="glass p-6">
-          <h4 className="font-display font-medium">Top palabras en reseñas <span style={{ color: "#059669" }}>POSITIVAS</span></h4>
-          <div className="space-y-3 mt-4">
-            {positives.map((p) => <Bar key={p.w} {...p} max={maxPos} color="var(--mint)" />)}
-          </div>
-        </div>
-        <div className="glass p-6">
-          <h4 className="font-display font-medium">Top palabras en reseñas <span style={{ color: "#DB2777" }}>NEGATIVAS</span></h4>
-          <div className="space-y-3 mt-4">
-            {negatives.map((p) => <Bar key={p.w} {...p} max={maxNeg} color="var(--coral)" />)}
-          </div>
-        </div>
-      </div>
-
-      <div className="grid sm:grid-cols-2 gap-4 mt-6">
-        {[
-          { badge: "Hallazgo empírico", title: "Las reseñas negativas son más largas", body: "Promedio negativas: 94 palabras. Positivas: 71 palabras. Los clientes insatisfechos explican más. Esto emergió del análisis de word_count — una variable que creamos en feature engineering.", borderColor: "var(--coral)", badgeBg: "rgba(249,168,212,0.3)", badgeColor: "#9D174D" },
-          { badge: "Insight NLP", title: "'Service' aparece en ambos lados", body: "'Service' es top-3 en positivas Y top-1 en negativas. El servicio es el factor más determinante de la experiencia — para bien y para mal. Ninguna estrella te dice eso.", borderColor: "var(--indigo)", badgeBg: "rgba(129,140,248,0.2)", badgeColor: "#3730A3" },
-          { badge: "Resultado del modelo", title: "Los tópicos LDA convergen en 4 áreas", body: "El modelo con K=4 identificó patrones coherentes: experiencia general, tiempo y servicio, calidad percibida y producto específico. Estos tópicos alimentan directamente las 'Critical Improvement Areas' del dashboard.", borderColor: "var(--mint)", badgeBg: "rgba(110,231,183,0.3)", badgeColor: "#065F46" },
-          { badge: "Feature engineering", title: "star_gap como señal de sesgo", body: "Creamos star_gap: diferencia entre la estrella del review y la estrella media del negocio. Un gap negativo alto indica clientes con expectativas altas. Transforma un número en contexto.", borderColor: "var(--peach)", badgeBg: "rgba(253,186,116,0.3)", badgeColor: "#9A3412" },
-          { badge: "Validación cruzada", title: "LDA + NMF convergen en los mismos factores", body: "El rating oculta realidad: el mismo score puede significar experiencias totalmente distintas. LDA + NMF convergen en los mismos factores (servicio, comida, ambiente, otros) → estructura real del dato.", borderColor: "var(--indigo)", badgeBg: "rgba(129,140,248,0.2)", badgeColor: "#3730A3" },
-        ].map((d) => (
-          <div key={d.title} className="glass-sm p-5" style={{ borderLeft: `3px solid ${d.borderColor}` }}>
-            <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono" style={{ background: d.badgeBg, color: d.badgeColor }}>{d.badge}</span>
-            <h4 className="font-display font-medium mt-3">{d.title}</h4>
-            <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{d.body}</p>
-          </div>
-        ))}
-      </div>
-
-      {/* Topics */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-        {topics.map((t) => (
-          <div key={t.i} className="glass p-5">
-            <div className="flex items-center justify-between">
-              <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Topic {t.i}</span>
-              <span className="px-2 py-0.5 rounded-full text-[10px]" style={{ background: "rgba(249,168,212,0.3)", color: "#9D174D" }}>negativo</span>
-            </div>
-            <p className="font-mono text-xs mt-3 text-foreground/80 leading-relaxed">{t.words}</p>
-            <p className="font-display text-sm mt-3 font-medium">{t.label}</p>
-          </div>
-        ))}
       </div>
 
       {/* Escalabilidad */}
@@ -266,4 +185,3 @@ export function TechnicalDepth() {
     </section>
   );
 }
-
