@@ -1,85 +1,43 @@
-import { useEffect, useRef, useState } from "react";
-
 function StorytellingIntro() {
-  const lines = [
-    { text: "Carlos Luna lleva 17 años sirviendo enchiladas en Santa Barbara.", muted: true },
-    { text: "Sus clientes han dejado cientos de opiniones sobre su restaurante.", muted: true },
-    { text: "Él nunca las leyó — no tuvo tiempo.", muted: false, italic: true },
-    { text: "Esas opiniones contienen oro: patrones, problemas, oportunidades.", muted: false },
-    { text: "Sin leerlas, está dejando $40.000 al año sobre la mesa.", muted: false, highlight: true },
-    { text: "Re-check las convierte en decisiones.", muted: false, final: true },
-  ];
-
-  const [visible, setVisible] = useState<number[]>([]);
-  const [cursorDone, setCursorDone] = useState(false);
-  const delays = [0, 1000, 2100, 3200, 4400, 5800];
-
-  useEffect(() => {
-    const timers = delays.map((d, i) =>
-      setTimeout(() => setVisible((v) => [...v, i]), d)
-    );
-    const cursorTimer = setTimeout(() => setCursorDone(true), 5800 + 1200);
-    return () => {
-      timers.forEach(clearTimeout);
-      clearTimeout(cursorTimer);
-    };
-  }, []);
-
   return (
-    <section className="px-6 py-32 max-w-3xl mx-auto">
+    <section className="px-6 py-32 max-w-5xl mx-auto">
       <p
-        className="font-mono text-[11px] tracking-[0.2em] uppercase mb-12"
+        className="font-mono text-[11px] tracking-[0.2em] uppercase mb-16"
         style={{ color: "rgba(129,140,248,0.7)" }}
       >
         El origen
       </p>
-      <div className="space-y-5">
-        {lines.map((line, i) => {
-          const isVisible = visible.includes(i);
-          const isFinal = line.final;
-
-          return (
-            <p
-              key={i}
-              className="transition-all duration-700 ease-out"
-              style={{
-                opacity: isVisible ? 1 : 0,
-                transform: isVisible ? "translateY(0)" : "translateY(14px)",
-                fontSize: isFinal ? "22px" : line.highlight ? "20px" : "18px",
-                fontWeight: isFinal ? 600 : line.highlight ? 500 : 400,
-                fontStyle: line.italic ? "italic" : "normal",
-                lineHeight: 1.65,
-                color: isFinal
-                  ? "var(--indigo)"
-                  : line.highlight
-                  ? "var(--foreground)"
-                  : line.muted
-                  ? "var(--muted-foreground)"
-                  : "var(--foreground)",
-                borderLeft: isFinal ? "3px solid var(--indigo)" : undefined,
-                paddingLeft: isFinal ? "1rem" : undefined,
-                marginTop: isFinal ? "2rem" : undefined,
-              }}
-            >
-              {line.text}
-              {isFinal && isVisible && !cursorDone && (
-                <span
-                  style={{
-                    display: "inline-block",
-                    width: "2px",
-                    height: "1em",
-                    background: "var(--indigo)",
-                    verticalAlign: "text-bottom",
-                    marginLeft: "3px",
-                    animation: "blink 1s step-end infinite",
-                  }}
-                />
-              )}
-            </p>
-          );
-        })}
+      <div className="space-y-6">
+        <p className="font-display text-muted-foreground" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 400 }}>
+          Carlos Luna lleva 17 años sirviendo enchiladas en Santa Barbara.
+        </p>
+        <p className="font-display text-muted-foreground" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 400 }}>
+          Sus clientes han dejado cientos de opiniones sobre su restaurante.
+        </p>
+        <p className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 500, fontStyle: "italic" }}>
+          Él nunca las leyó — no tuvo tiempo.
+        </p>
+        <p className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 400 }}>
+          Esas opiniones contienen oro: patrones, problemas, oportunidades.
+        </p>
+        <p className="font-display" style={{ fontSize: "clamp(2.25rem, 5vw, 4.5rem)", lineHeight: 1.15, fontWeight: 700 }}>
+          Sin leerlas, está dejando $40.000 al año sobre la mesa.
+        </p>
+        <p
+          className="font-display"
+          style={{
+            fontSize: "clamp(2.25rem, 5vw, 4.5rem)",
+            lineHeight: 1.15,
+            fontWeight: 700,
+            color: "var(--indigo)",
+            borderLeft: "5px solid var(--indigo)",
+            paddingLeft: "1.5rem",
+            marginTop: "3rem",
+          }}
+        >
+          Re-check las convierte en decisiones.
+        </p>
       </div>
-      <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
     </section>
   );
 }
