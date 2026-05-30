@@ -1,6 +1,100 @@
+import { useEffect, useRef, useState } from "react";
+
+function StorytellingIntro() {
+  const lines = [
+    { text: "Carlos Luna lleva 17 años sirviendo enchiladas en Santa Barbara.", muted: true },
+    { text: "Sus clientes han dejado cientos de opiniones sobre su restaurante.", muted: true },
+    { text: "Él nunca las leyó — no tuvo tiempo.", muted: false, italic: true },
+    { text: "Esas opiniones contienen oro: patrones, problemas, oportunidades.", muted: false },
+    { text: "Sin leerlas, está dejando $40.000 al año sobre la mesa.", muted: false, highlight: true },
+    { text: "Re-check las convierte en decisiones.", muted: false, final: true },
+  ];
+
+  const [visible, setVisible] = useState<number[]>([]);
+  const [cursorDone, setCursorDone] = useState(false);
+  const delays = [0, 1000, 2100, 3200, 4400, 5800];
+
+  useEffect(() => {
+    const timers = delays.map((d, i) =>
+      setTimeout(() => setVisible((v) => [...v, i]), d)
+    );
+    const cursorTimer = setTimeout(() => setCursorDone(true), 5800 + 1200);
+    return () => {
+      timers.forEach(clearTimeout);
+      clearTimeout(cursorTimer);
+    };
+  }, []);
+
+  return (
+    <section className="px-6 py-32 max-w-3xl mx-auto">
+      <p
+        className="font-mono text-[11px] tracking-[0.2em] uppercase mb-12"
+        style={{ color: "rgba(129,140,248,0.7)" }}
+      >
+        El origen
+      </p>
+      <div className="space-y-5">
+        {lines.map((line, i) => {
+          const isVisible = visible.includes(i);
+          const isFinal = line.final;
+
+          return (
+            <p
+              key={i}
+              className="transition-all duration-700 ease-out"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? "translateY(0)" : "translateY(14px)",
+                fontSize: isFinal ? "22px" : line.highlight ? "20px" : "18px",
+                fontWeight: isFinal ? 600 : line.highlight ? 500 : 400,
+                fontStyle: line.italic ? "italic" : "normal",
+                lineHeight: 1.65,
+                color: isFinal
+                  ? "var(--indigo)"
+                  : line.highlight
+                  ? "var(--foreground)"
+                  : line.muted
+                  ? "var(--muted-foreground)"
+                  : "var(--foreground)",
+                borderLeft: isFinal ? "3px solid var(--indigo)" : undefined,
+                paddingLeft: isFinal ? "1rem" : undefined,
+                marginTop: isFinal ? "2rem" : undefined,
+              }}
+            >
+              {line.text}
+              {isFinal && isVisible && !cursorDone && (
+                <span
+                  style={{
+                    display: "inline-block",
+                    width: "2px",
+                    height: "1em",
+                    background: "var(--indigo)",
+                    verticalAlign: "text-bottom",
+                    marginLeft: "3px",
+                    animation: "blink 1s step-end infinite",
+                  }}
+                />
+              )}
+            </p>
+          );
+        })}
+      </div>
+      <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
+    </section>
+  );
+}
+
 export function ProblemPipeline() {
   return (
     <>
+      {/* STORYTELLING INTRO */}
+      <StorytellingIntro />
+
+      {/* DIVIDER */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div style={{ borderTop: "1px solid rgba(129,140,248,0.15)" }} />
+      </div>
+
       {/* SECTION 1 — EL PROBLEMA */}
       <section id="problema" className="px-6 py-24 max-w-7xl mx-auto">
         <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground">01. El Problema</p>
