@@ -40,32 +40,72 @@ export function Results() {
   const maxNeg = Math.max(...negatives.map((p) => p.n));
   return (
     <section id="resultados" className="px-6 py-24 max-w-7xl mx-auto">
-      <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground">03. Resultados del TFM</p>
-      <h2 className="font-display font-semibold text-4xl md:text-5xl mt-3">Lo que encontramos — y lo que no esperábamos</h2>
-      <p className="text-muted-foreground mt-3 max-w-2xl">Insights reales extraídos de 127.000 reseñas procesadas.</p>
-      <p className="text-sm text-muted-foreground mt-4 max-w-3xl leading-relaxed">
-        Procesamos 127.000 reseñas de restaurantes mexicanos a través de un pipeline NLP completo: limpieza de texto, tokenización, eliminación de stopwords y lematización con spaCy. Luego aplicamos CountVectorizer con más de 10.000 términos y LDA con 4 tópicos para identificar los patrones semánticos más relevantes.
-      </p>
+      <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground">03. Resultados y Cierre</p>
+      <h2 className="font-display font-semibold text-4xl md:text-5xl mt-3">Volvemos al principio</h2>
 
-      <div className="grid lg:grid-cols-2 gap-6 mt-10">
+      {/* Carlos story */}
+      <div className="glass p-6 mt-8 border-l-4" style={{ borderLeftColor: "var(--coral)" }}>
+        <p className="text-sm md:text-base leading-relaxed">
+          Carlos tiene <span className="font-semibold">Los Agaves</span> en Santa Barbara, CA. Tiene reseñas. Y hasta hoy, nunca había tenido tiempo de leerlas todas.
+        </p>
+        <p className="text-sm md:text-base leading-relaxed mt-3 text-muted-foreground">
+          Lo que no sabía es que un cliente escribió <span className="font-semibold text-foreground">180 palabras</span> explicando por qué no volvería. El manager estaba de descanso. Nadie lo detectó. Carlos nunca leyó esa reseña. <span className="font-semibold text-foreground">Re-check sí.</span>
+        </p>
+      </div>
+
+      {/* ¿Lo resolvimos? */}
+      <div className="mt-10">
+        <h3 className="font-display font-semibold text-2xl md:text-3xl">¿LO RESOLVIMOS?</h3>
+        <p className="font-display text-xl mt-2" style={{ color: "var(--mint)" }}>Sí.</p>
+        <p className="text-sm text-muted-foreground mt-3 max-w-2xl">
+          En el dashboard de Los Agaves: <span className="font-mono font-semibold text-foreground">NPS +87 · 4.6/5 · 93% sentimiento positivo</span>
+        </p>
+        <p className="text-sm text-muted-foreground mt-2">Pero el problema estaba en el <span className="font-semibold text-foreground">7% negativo oculto.</span></p>
+      </div>
+
+      {/* Detección */}
+      <div className="grid sm:grid-cols-3 gap-4 mt-6">
+        <div className="glass-sm p-5" style={{ borderLeft: "3px solid var(--coral)" }}>
+          <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Detectado</p>
+          <p className="font-display font-medium mt-2">Service → 0% sentimiento positivo</p>
+        </div>
+        <div className="glass-sm p-5" style={{ borderLeft: "3px solid var(--peach)" }}>
+          <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Causa raíz</p>
+          <p className="font-display font-medium mt-2">1 reseña de 180 palabras → cliente perdido → sin detección previa</p>
+        </div>
+        <div className="glass-sm p-5" style={{ borderLeft: "3px solid var(--mint)" }}>
+          <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">El dato clave</p>
+          <p className="font-display font-medium mt-2">La comida no era el problema — enchiladas de halibut con menciones positivas constantes</p>
+        </div>
+      </div>
+
+      <div className="glass p-5 mt-4 border-l-4" style={{ borderLeftColor: "var(--indigo)" }}>
+        <p className="text-sm">
+          El problema era <span className="font-semibold">operativo</span>: fallo en la gestión de un turno no detectado.
+        </p>
+        <p className="text-sm mt-2 font-semibold" style={{ color: "var(--indigo)" }}>
+          👉 Acción: protocolo de gestión de turnos + seguimiento semanal de service
+        </p>
+        <p className="text-sm mt-2 text-muted-foreground italic">Esto no es un análisis. Es una decisión.</p>
+      </div>
+
+      {/* Lo que los datos nos enseñaron */}
+      <h3 className="font-display font-semibold text-2xl mt-14">LO QUE LOS DATOS NOS ENSEÑARON</h3>
+      <p className="text-muted-foreground mt-2 text-sm">Procesamos 127.000 reseñas de restaurantes mexicanos</p>
+
+      <div className="grid lg:grid-cols-2 gap-6 mt-6">
         <div className="glass p-6">
-          <h3 className="font-display font-medium">Top palabras en reseñas <span style={{ color: "#059669" }}>POSITIVAS</span></h3>
+          <h4 className="font-display font-medium">Top palabras en reseñas <span style={{ color: "#059669" }}>POSITIVAS</span></h4>
           <div className="space-y-3 mt-4">
             {positives.map((p) => <Bar key={p.w} {...p} max={maxPos} color="var(--mint)" />)}
           </div>
         </div>
         <div className="glass p-6">
-          <h3 className="font-display font-medium">Top palabras en reseñas <span style={{ color: "#DB2777" }}>NEGATIVAS</span></h3>
+          <h4 className="font-display font-medium">Top palabras en reseñas <span style={{ color: "#DB2777" }}>NEGATIVAS</span></h4>
           <div className="space-y-3 mt-4">
             {negatives.map((p) => <Bar key={p.w} {...p} max={maxNeg} color="var(--coral)" />)}
           </div>
         </div>
-      </div>
-
-      <div className="glass p-6 mt-6 border-l-4" style={{ borderLeftColor: "var(--peach)" }}>
-        <p className="text-sm md:text-base">
-          <span className="font-medium">💡 Insight clave:</span> Las reseñas negativas tienden a ser más largas que las positivas — los clientes insatisfechos explican más. Esto validó nuestra decisión de eliminar reviews &lt;10 palabras del dataset.
-        </p>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4 mt-6">
@@ -74,6 +114,7 @@ export function Results() {
           { badge: "Insight NLP", title: "'Service' aparece en ambos lados", body: "'Service' es top-3 en positivas Y top-1 en negativas. El servicio es el factor más determinante de la experiencia — para bien y para mal. Ninguna estrella te dice eso.", borderColor: "var(--indigo)", badgeBg: "rgba(129,140,248,0.2)", badgeColor: "#3730A3" },
           { badge: "Resultado del modelo", title: "Los tópicos LDA convergen en 4 áreas", body: "El modelo con K=4 identificó patrones coherentes: experiencia general, tiempo y servicio, calidad percibida y producto específico. Estos tópicos alimentan directamente las 'Critical Improvement Areas' del dashboard.", borderColor: "var(--mint)", badgeBg: "rgba(110,231,183,0.3)", badgeColor: "#065F46" },
           { badge: "Feature engineering", title: "star_gap como señal de sesgo", body: "Creamos star_gap: diferencia entre la estrella del review y la estrella media del negocio. Un gap negativo alto indica clientes con expectativas altas. Transforma un número en contexto.", borderColor: "var(--peach)", badgeBg: "rgba(253,186,116,0.3)", badgeColor: "#9A3412" },
+          { badge: "Validación cruzada", title: "LDA + NMF convergen en los mismos factores", body: "El rating oculta realidad: el mismo score puede significar experiencias totalmente distintas. LDA + NMF convergen en los mismos factores (servicio, comida, ambiente, otros) → estructura real del dato.", borderColor: "var(--indigo)", badgeBg: "rgba(129,140,248,0.2)", badgeColor: "#3730A3" },
         ].map((d) => (
           <div key={d.title} className="glass-sm p-5" style={{ borderLeft: `3px solid ${d.borderColor}` }}>
             <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono" style={{ background: d.badgeBg, color: d.badgeColor }}>{d.badge}</span>
@@ -83,6 +124,7 @@ export function Results() {
         ))}
       </div>
 
+      {/* Topics */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
         {topics.map((t) => (
           <div key={t.i} className="glass p-5">
@@ -94,6 +136,54 @@ export function Results() {
             <p className="font-display text-sm mt-3 font-medium">{t.label}</p>
           </div>
         ))}
+      </div>
+
+      {/* Escalabilidad */}
+      <div className="mt-14 glass p-8" style={{ border: "1px solid rgba(110,231,183,0.3)", background: "rgba(110,231,183,0.04)" }}>
+        <p className="font-mono text-[11px] tracking-[0.2em] uppercase" style={{ color: "var(--mint)" }}>Escalabilidad</p>
+        <h3 className="font-display text-2xl font-semibold mt-2">Carlos es uno. Pero hay miles.</h3>
+        <p className="text-muted-foreground mt-3 max-w-2xl leading-relaxed text-sm">
+          El pipeline ya funciona con Google Reviews y la base de datos de Yelp, pero podría integrarse fácilmente con otras fuentes como TripAdvisor u otras plataformas de reseñas.
+        </p>
+        <div className="grid md:grid-cols-2 gap-4 mt-6">
+          <div className="glass-sm p-5">
+            <p className="font-display font-medium">Un restaurante en Madrid puede tener 20 o 800 reseñas.</p>
+            <p className="text-sm text-muted-foreground mt-2">El tamaño no cambia el pipeline — cambia el volumen procesado.</p>
+          </div>
+          <div className="glass-sm p-5">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-2">Infraestructura</p>
+            <p className="font-display font-medium">Ya operativa en Railway</p>
+            <p className="text-sm text-muted-foreground mt-2">Añadir negocio = un endpoint.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Próximos pasos */}
+      <div className="mt-10">
+        <h3 className="font-display font-semibold text-xl">PRÓXIMOS PASOS</h3>
+        <div className="flex flex-wrap gap-3 mt-4">
+          {[
+            "Clasificador supervisado por factor",
+            "Alertas automáticas por umbral negativo",
+            "Benchmark competitivo en tiempo real",
+            "Expansión sectorial",
+          ].map((step) => (
+            <span key={step} className="px-4 py-2 rounded-full text-sm font-mono" style={{ background: "rgba(129,140,248,0.12)", color: "var(--indigo)", border: "1px solid rgba(129,140,248,0.25)" }}>
+              → {step}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Cierre */}
+      <div className="mt-14 glass p-10 text-center" style={{ border: "1px solid rgba(253,186,116,0.3)", background: "rgba(253,186,116,0.04)" }}>
+        <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Cierre</p>
+        <p className="font-display text-xl md:text-2xl font-semibold mt-4 max-w-2xl mx-auto leading-snug">
+          Carlos ahora sabe que su comida no es el problema. Sabe que su servicio necesita atención. Y sabe exactamente dónde actuar.
+        </p>
+        <p className="text-muted-foreground mt-4 text-sm max-w-lg mx-auto">
+          Todo estaba en sus reseñas. Re-check lo escuchó por él.
+        </p>
       </div>
     </section>
   );
@@ -176,3 +266,4 @@ export function TechnicalDepth() {
     </section>
   );
 }
+
