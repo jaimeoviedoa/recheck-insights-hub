@@ -14,7 +14,7 @@ export function Demo() {
         />
         <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Demo en vivo</p>
         <h3 className="font-display text-3xl md:text-4xl font-semibold mt-3">
-          ¿Listo para ver el dashboard real?
+          Listo para ver el dashboard real?
         </h3>
         <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
           Las 15 reseñas reales de Yelp de Los Agaves. El pipeline NLP completo. La inteligencia funcionando sobre datos reales de Santa Barbara, CA.
@@ -30,7 +30,7 @@ export function Demo() {
               boxShadow: "0 12px 32px rgba(129,140,248,0.35)",
             }}
           >
-            Ver Los Agaves en Re-check →
+            Ver Los Agaves en Re-check
             <ExternalLink size={16} />
           </a>
           
