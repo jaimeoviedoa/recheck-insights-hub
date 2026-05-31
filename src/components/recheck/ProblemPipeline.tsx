@@ -1,62 +1,43 @@
 function StorytellingIntro() {
   return (
-    <section className="px-6 py-32 max-w-5xl mx-auto">
-      <p
-        className="font-mono text-[11px] tracking-[0.2em] uppercase mb-16"
-        style={{ color: "rgba(129,140,248,0.7)" }}
-      >
-        El origen
-      </p>
-      <div className="space-y-6">
-        <p className="font-display text-muted-foreground" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 400 }}>
-          Carlos Luna lleva 17 años sirviendo enchiladas en Santa Barbara.
+    <>
+      {/* ── BLOQUE 1: EL DATO ── */}
+      <section className="px-6 py-32 max-w-5xl mx-auto">
+        <p
+          className="font-mono text-[11px] tracking-[0.2em] uppercase mb-16"
+          style={{ color: "rgba(129,140,248,0.7)" }}
+        >
+          El origen
         </p>
-        <p className="font-display text-muted-foreground" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 400 }}>
-          Sus clientes han dejado cientos de opiniones sobre su restaurante.
-        </p>
-        <p className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 500, fontStyle: "italic" }}>
-          Él nunca las leyó — no tuvo tiempo.
-        </p>
-        <p className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 400 }}>
-          Esas opiniones contienen oro: patrones, problemas, oportunidades.
-        </p>
-        <p className="font-display" style={{ fontSize: "clamp(2.25rem, 5vw, 4.5rem)", lineHeight: 1.15, fontWeight: 700 }}>
-          Sin leerlas, está dejando $40.000 al año sobre la mesa.
-        </p>
+
+        {/* Stat grande */}
         <p
           className="font-display"
           style={{
-            fontSize: "clamp(2.25rem, 5vw, 4.5rem)",
-            lineHeight: 1.15,
-            fontWeight: 700,
-            color: "var(--indigo)",
-            borderLeft: "5px solid var(--indigo)",
-            paddingLeft: "1.5rem",
-            marginTop: "3rem",
+            fontSize: "clamp(3rem, 8vw, 7rem)",
+            lineHeight: 1.0,
+            fontWeight: 800,
+            letterSpacing: "-0.02em",
           }}
         >
-          Re-check las convierte en decisiones.
+          El 94% de las reseñas online nunca se leen.
         </p>
-      </div>
-    </section>
-  );
-}
+        <p
+          className="font-display text-muted-foreground mt-8"
+          style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", lineHeight: 1.5, fontWeight: 400, maxWidth: "680px" }}
+        >
+          No porque los dueños no quieran. Sino porque analizar 500 reseñas a mano son{" "}
+          <strong style={{ fontWeight: 700, color: "inherit" }}>40 horas de trabajo</strong> que ningún restaurante tiene.
+        </p>
+      </section>
 
-export function ProblemPipeline() {
-  return (
-    <>
-      {/* STORYTELLING INTRO */}
-      <StorytellingIntro />
-
-      {/* DIVIDER */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div style={{ borderTop: "1px solid rgba(129,140,248,0.15)" }} />
-      </div>
-
-      {/* SECTION 1 — EL PROBLEMA */}
-      <section id="problema" className="px-6 py-24 max-w-7xl mx-auto">
+      {/* ── BLOQUE 2: EL PROBLEMA (cards) ── */}
+      <section id="problema" className="px-6 pb-24 max-w-7xl mx-auto">
         <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground">01. El Problema</p>
-        <h2 className="font-display font-semibold text-4xl md:text-6xl mt-4 max-w-3xl leading-tight">
+        <h2
+          className="font-display font-semibold mt-4 leading-tight"
+          style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", maxWidth: "800px" }}
+        >
           Las empresas tienen miles de reseñas. Nadie las entiende a escala.
         </h2>
         <div className="grid md:grid-cols-3 gap-5 mt-12">
@@ -87,6 +68,225 @@ export function ProblemPipeline() {
           ))}
         </div>
       </section>
+
+      {/* DIVIDER */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div style={{ borderTop: "1px solid rgba(129,140,248,0.15)" }} />
+      </div>
+
+      {/* ── BLOQUE 3: LA HISTORIA ── */}
+      <section className="px-6 py-32 max-w-5xl mx-auto">
+        <p
+          className="font-mono text-[11px] tracking-[0.2em] uppercase mb-16"
+          style={{ color: "rgba(129,140,248,0.7)" }}
+        >
+          La historia
+        </p>
+        <div className="space-y-6">
+          <p
+            className="font-display"
+            style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 400, color: "var(--foreground)" }}
+          >
+            Carlos Luna lleva 17 años sirviendo enchiladas en Santa Barbara.
+          </p>
+          <p
+            className="font-display"
+            style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 400, color: "var(--foreground)" }}
+          >
+            Sus clientes han dejado cientos de opiniones sobre su restaurante.
+          </p>
+          <p
+            className="font-display"
+            style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 500, fontStyle: "italic", color: "var(--foreground)" }}
+          >
+            Él nunca las leyó — no tuvo tiempo.
+          </p>
+          <p
+            className="font-display"
+            style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 400, color: "var(--foreground)" }}
+          >
+            Esas opiniones contienen oro: patrones, problemas, oportunidades.
+          </p>
+          <p
+            className="font-display"
+            style={{ fontSize: "clamp(2.25rem, 5vw, 4.5rem)", lineHeight: 1.15, fontWeight: 700, color: "var(--foreground)" }}
+          >
+            Sin leerlas, está dejando $40.000 al año sobre la mesa.
+          </p>
+        </div>
+      </section>
+
+      {/* DIVIDER */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div style={{ borderTop: "1px solid rgba(129,140,248,0.15)" }} />
+      </div>
+
+      {/* ── BLOQUE 4: LA SOLUCIÓN ── */}
+      <section className="px-6 py-32 max-w-5xl mx-auto">
+        <p
+          className="font-mono text-[11px] tracking-[0.2em] uppercase mb-16"
+          style={{ color: "rgba(129,140,248,0.7)" }}
+        >
+          La solución en una frase
+        </p>
+        <div className="space-y-6">
+          <p
+            className="font-display"
+            style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)", lineHeight: 1.3, fontWeight: 400 }}
+          >
+            Re-check convierte información cualitativa —{" "}
+            <em>texto desordenado de clientes</em> — en información cuantitativa y accionable para dueños de restaurantes.
+          </p>
+          <p
+            className="font-display text-muted-foreground"
+            style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", lineHeight: 1.5, fontWeight: 400 }}
+          >
+            No es un gestor de reseñas. No es marketing.
+          </p>
+          <p
+            className="font-display"
+            style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", lineHeight: 1.4, fontWeight: 400 }}
+          >
+            Es un sistema de inteligencia que automatiza un proceso que manualmente consume 40 horas al mes, y lo convierte en un dashboard que{" "}
+            <strong style={{ fontWeight: 700 }}>Carlos</strong> puede leer en 5 minutos.
+          </p>
+
+          {/* Tres cosas concretas */}
+          <div style={{ marginTop: "3rem" }}>
+            <p
+              className="font-mono text-[11px] tracking-[0.2em] uppercase mb-6"
+              style={{ color: "rgba(129,140,248,0.7)" }}
+            >
+              Tres cosas concretas
+            </p>
+            <div className="space-y-4">
+              {[
+                "Calcula el NPS real basado en sentimiento del texto, no en encuestas.",
+                "Identifica qué factores generan satisfacción e insatisfacción — no las estrellas, el texto.",
+                "Genera quick wins y planes de acción priorizados por impacto económico.",
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="flex gap-5 items-start"
+                  style={{
+                    borderLeft: "3px solid rgba(129,140,248,0.5)",
+                    paddingLeft: "1.25rem",
+                  }}
+                >
+                  <span
+                    className="font-mono shrink-0"
+                    style={{ fontSize: "11px", color: "rgba(129,140,248,0.7)", marginTop: "6px" }}
+                  >
+                    0{i + 1}
+                  </span>
+                  <p
+                    className="font-display"
+                    style={{ fontSize: "clamp(1.1rem, 2vw, 1.5rem)", lineHeight: 1.4, fontWeight: 400 }}
+                  >
+                    {item}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA final */}
+          <p
+            className="font-display"
+            style={{
+              fontSize: "clamp(2.25rem, 5vw, 4.5rem)",
+              lineHeight: 1.15,
+              fontWeight: 700,
+              color: "var(--indigo)",
+              borderLeft: "5px solid var(--indigo)",
+              paddingLeft: "1.5rem",
+              marginTop: "4rem",
+            }}
+          >
+            Re-check las convierte en decisiones.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+export function ProblemPipeline() {
+  return (
+    <>
+      {/* BLOQUES 1–4 */}
+      <StorytellingIntro />
+
+      {/* DIVIDER */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div style={{ borderTop: "1px solid rgba(129,140,248,0.15)" }} />
+      </div>
+
+      {/* SECTION — EL PIPELINE (sin cambios) */}
+      <section id="pipeline" className="px-6 py-24 max-w-7xl mx-auto">
+        <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Data Pipeline</p>
+        <h2 className="font-display font-semibold text-4xl md:text-5xl mt-4">Nuestro Pipeline NLP</h2>
+        <p className="text-muted-foreground mt-3 max-w-2xl">
+          Cada paso fue una decisión deliberada. De 7 millones de reseñas a inteligencia accionable.
+        </p>
+
+        <div className="relative mt-12">
+          <div className="hidden md:block absolute left-6 top-6 bottom-6 w-px border-l-2 border-dotted border-foreground/10" />
+          <div className="space-y-6">
+            {[
+              {
+                badge: "01",
+                title: "Ingesta y filtrado",
+                body: "Partíamos de 6,99 millones de reseñas en un único archivo JSON, demasiado grande para cargarlo en memoria. Implementamos chunking en bloques de 100K filas y filtramos hasta 127.000 reseñas de restaurantes mexicanos. Eliminamos reviews neutrales (3★) y reseñas de menos de 10 palabras para trabajar solo con opiniones semánticamente útiles.",
+                pills: ["chunking 100K", "127K reseñas", "sin ruido neutral"],
+              },
+              {
+                badge: "02",
+                title: "Procesamiento NLP",
+                body: "Cada reseña pasó por lowercase → puntuación → tokenización → stopwords → lematización con spaCy. El texto limpio se vectorizó con CountVectorizer (10.000+ términos). Usamos LDA con tuning de hiperparámetros evaluado con coherencia c_v, validado con NMF sobre TF-IDF. Ambos convergieron en los mismos 4 factores — consistencia y fiabilidad demostrada.",
+                pills: ["spaCy", "CountVectorizer", "LDA + NMF", "coherencia c_v"],
+              },
+              {
+                badge: "03",
+                title: "Inteligencia accionable",
+                body: "LDA + NMF produjeron una taxonomía de 4 factores: servicio, comida, ambiente y otros. Priorizamos precisión interpretativa antes que forzar clasificaciones poco claras. Feature engineering con star_gap, word_count, sentiment_binary e is_chain. Todo conectado al dashboard en tiempo real vía FastAPI + Railway.",
+                pills: ["star_gap", "word_count", "sentiment_binary", "is_chain", "FastAPI + Railway"],
+              },
+            ].map((b) => (
+              <div key={b.badge} className="glass p-6 md:p-8 flex gap-6 items-start">
+                <div
+                  className="shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center font-mono text-sm font-bold"
+                  style={{ background: "rgba(129,140,248,0.15)", color: "var(--indigo)" }}
+                >
+                  {b.badge}
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-display text-xl font-semibold">{b.title}</h3>
+                  <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{b.body}</p>
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {b.pills.map((pill) => (
+                      <span
+                        key={pill}
+                        className="px-3 py-1 rounded-full text-[10px] font-mono"
+                        style={{
+                          background: "rgba(129,140,248,0.08)",
+                          color: "var(--indigo)",
+                          border: "1px solid rgba(129,140,248,0.2)",
+                        }}
+                      >
+                        {pill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
 
       {/* SECTION 2 — EL PIPELINE */}
       <section id="pipeline" className="px-6 py-24 max-w-7xl mx-auto">
