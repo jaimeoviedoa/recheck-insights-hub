@@ -9,8 +9,6 @@ function StorytellingIntro() {
         >
           El origen
         </p>
-
-        {/* Stat grande */}
         <p
           className="font-display"
           style={{
@@ -31,7 +29,7 @@ function StorytellingIntro() {
         </p>
       </section>
 
-      {/* ── BLOQUE 2: EL PROBLEMA (cards) ── */}
+      {/* ── BLOQUE 2: EL PROBLEMA ── */}
       <section id="problema" className="px-6 pb-24 max-w-7xl mx-auto">
         <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground">01. El Problema</p>
         <h2
@@ -83,34 +81,19 @@ function StorytellingIntro() {
           La historia
         </p>
         <div className="space-y-6">
-          <p
-            className="font-display"
-            style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 400, color: "var(--foreground)" }}
-          >
+          <p className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 400, color: "var(--foreground)" }}>
             Carlos Luna lleva 17 años sirviendo enchiladas en Santa Barbara.
           </p>
-          <p
-            className="font-display"
-            style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 400, color: "var(--foreground)" }}
-          >
+          <p className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 400, color: "var(--foreground)" }}>
             Sus clientes han dejado cientos de opiniones sobre su restaurante.
           </p>
-          <p
-            className="font-display"
-            style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 500, fontStyle: "italic", color: "var(--foreground)" }}
-          >
+          <p className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 500, fontStyle: "italic", color: "var(--foreground)" }}>
             Él nunca las leyó — no tuvo tiempo.
           </p>
-          <p
-            className="font-display"
-            style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 400, color: "var(--foreground)" }}
-          >
+          <p className="font-display" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.25, fontWeight: 400, color: "var(--foreground)" }}>
             Esas opiniones contienen oro: patrones, problemas, oportunidades.
           </p>
-          <p
-            className="font-display"
-            style={{ fontSize: "clamp(2.25rem, 5vw, 4.5rem)", lineHeight: 1.15, fontWeight: 700, color: "var(--foreground)" }}
-          >
+          <p className="font-display" style={{ fontSize: "clamp(2.25rem, 5vw, 4.5rem)", lineHeight: 1.15, fontWeight: 700, color: "var(--foreground)" }}>
             Sin leerlas, está dejando $40.000 al año sobre la mesa.
           </p>
         </div>
@@ -130,33 +113,20 @@ function StorytellingIntro() {
           La solución en una frase
         </p>
         <div className="space-y-6">
-          <p
-            className="font-display"
-            style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)", lineHeight: 1.3, fontWeight: 400 }}
-          >
+          <p className="font-display" style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)", lineHeight: 1.3, fontWeight: 400 }}>
             Re-check convierte información cualitativa —{" "}
             <em>texto desordenado de clientes</em> — en información cuantitativa y accionable para dueños de restaurantes.
           </p>
-          <p
-            className="font-display text-muted-foreground"
-            style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", lineHeight: 1.5, fontWeight: 400 }}
-          >
+          <p className="font-display text-muted-foreground" style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", lineHeight: 1.5, fontWeight: 400 }}>
             No es un gestor de reseñas. No es marketing.
           </p>
-          <p
-            className="font-display"
-            style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", lineHeight: 1.4, fontWeight: 400 }}
-          >
+          <p className="font-display" style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", lineHeight: 1.4, fontWeight: 400 }}>
             Es un sistema de inteligencia que automatiza un proceso que manualmente consume 40 horas al mes, y lo convierte en un dashboard que{" "}
             <strong style={{ fontWeight: 700 }}>Carlos</strong> puede leer en 5 minutos.
           </p>
 
-          {/* Tres cosas concretas */}
           <div style={{ marginTop: "3rem" }}>
-            <p
-              className="font-mono text-[11px] tracking-[0.2em] uppercase mb-6"
-              style={{ color: "rgba(129,140,248,0.7)" }}
-            >
+            <p className="font-mono text-[11px] tracking-[0.2em] uppercase mb-6" style={{ color: "rgba(129,140,248,0.7)" }}>
               Tres cosas concretas
             </p>
             <div className="space-y-4">
@@ -168,21 +138,12 @@ function StorytellingIntro() {
                 <div
                   key={i}
                   className="flex gap-5 items-start"
-                  style={{
-                    borderLeft: "3px solid rgba(129,140,248,0.5)",
-                    paddingLeft: "1.25rem",
-                  }}
+                  style={{ borderLeft: "3px solid rgba(129,140,248,0.5)", paddingLeft: "1.25rem" }}
                 >
-                  <span
-                    className="font-mono shrink-0"
-                    style={{ fontSize: "11px", color: "rgba(129,140,248,0.7)", marginTop: "6px" }}
-                  >
+                  <span className="font-mono shrink-0" style={{ fontSize: "11px", color: "rgba(129,140,248,0.7)", marginTop: "6px" }}>
                     0{i + 1}
                   </span>
-                  <p
-                    className="font-display"
-                    style={{ fontSize: "clamp(1.1rem, 2vw, 1.5rem)", lineHeight: 1.4, fontWeight: 400 }}
-                  >
+                  <p className="font-display" style={{ fontSize: "clamp(1.1rem, 2vw, 1.5rem)", lineHeight: 1.4, fontWeight: 400 }}>
                     {item}
                   </p>
                 </div>
@@ -190,7 +151,6 @@ function StorytellingIntro() {
             </div>
           </div>
 
-          {/* CTA final */}
           <p
             className="font-display"
             style={{
@@ -214,7 +174,6 @@ function StorytellingIntro() {
 export function ProblemPipeline() {
   return (
     <>
-      {/* BLOQUES 1–4 */}
       <StorytellingIntro />
 
       {/* DIVIDER */}
@@ -222,7 +181,7 @@ export function ProblemPipeline() {
         <div style={{ borderTop: "1px solid rgba(129,140,248,0.15)" }} />
       </div>
 
-      {/* SECTION — EL PIPELINE (sin cambios) */}
+      {/* ── PIPELINE ── */}
       <section id="pipeline" className="px-6 py-24 max-w-7xl mx-auto">
         <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Data Pipeline</p>
         <h2 className="font-display font-semibold text-4xl md:text-5xl mt-4">Nuestro Pipeline NLP</h2>
@@ -287,7 +246,6 @@ export function ProblemPipeline() {
     </>
   );
 }
-
       {/* SECTION 2 — EL PIPELINE */}
       <section id="pipeline" className="px-6 py-24 max-w-7xl mx-auto">
         <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Data Pipeline</p>
