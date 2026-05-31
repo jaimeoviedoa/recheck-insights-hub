@@ -3,27 +3,13 @@ function StorytellingIntro() {
     <>
       {/* ── BLOQUE 1: EL DATO ── */}
       <section className="px-6 py-32 max-w-5xl mx-auto">
-        <p
-          className="font-mono text-[11px] tracking-[0.2em] uppercase mb-16"
-          style={{ color: "rgba(129,140,248,0.7)" }}
-        >
+        <p className="font-mono text-[11px] tracking-[0.2em] uppercase mb-16" style={{ color: "rgba(129,140,248,0.7)" }}>
           El origen
         </p>
-        <p
-          className="font-display"
-          style={{
-            fontSize: "clamp(3rem, 8vw, 7rem)",
-            lineHeight: 1.0,
-            fontWeight: 800,
-            letterSpacing: "-0.02em",
-          }}
-        >
+        <p className="font-display" style={{ fontSize: "clamp(3rem, 8vw, 7rem)", lineHeight: 1.0, fontWeight: 800, letterSpacing: "-0.02em" }}>
           El 94% de las reseñas online nunca se leen.
         </p>
-        <p
-          className="font-display text-muted-foreground mt-8"
-          style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", lineHeight: 1.5, fontWeight: 400, maxWidth: "680px" }}
-        >
+        <p className="font-display text-muted-foreground mt-8" style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", lineHeight: 1.5, fontWeight: 400, maxWidth: "680px" }}>
           No porque los dueños no quieran. Sino porque analizar 500 reseñas a mano son{" "}
           <strong style={{ fontWeight: 700, color: "inherit" }}>40 horas de trabajo</strong> que ningún restaurante tiene.
         </p>
@@ -32,29 +18,14 @@ function StorytellingIntro() {
       {/* ── BLOQUE 2: EL PROBLEMA ── */}
       <section id="problema" className="px-6 pb-24 max-w-7xl mx-auto">
         <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground">01. El Problema</p>
-        <h2
-          className="font-display font-semibold mt-4 leading-tight"
-          style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", maxWidth: "800px" }}
-        >
+        <h2 className="font-display font-semibold mt-4 leading-tight" style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", maxWidth: "800px" }}>
           Las empresas tienen miles de reseñas. Nadie las entiende a escala.
         </h2>
         <div className="grid md:grid-cols-3 gap-5 mt-12">
           {[
-            {
-              icon: "⚠️",
-              title: "Texto no estructurado",
-              body: "Las estrellas dicen cuánto falla el negocio. El texto dice por qué — y nadie lo analiza.",
-            },
-            {
-              icon: "⏱️",
-              title: "Análisis manual imposible",
-              body: "Un restaurante con 500 reseñas necesitaría 40+ horas para leerlas todas manualmente.",
-            },
-            {
-              icon: "📉",
-              title: "Decisiones sin datos",
-              body: "Sin NLP, los problemas operativos se repiten sin ser detectados ni priorizados.",
-            },
+            { icon: "⚠️", title: "Texto no estructurado", body: "Las estrellas dicen cuánto falla el negocio. El texto dice por qué — y nadie lo analiza." },
+            { icon: "⏱️", title: "Análisis manual imposible", body: "Un restaurante con 500 reseñas necesitaría 40+ horas para leerlas todas manualmente." },
+            { icon: "📉", title: "Decisiones sin datos", body: "Sin NLP, los problemas operativos se repiten sin ser detectados ni priorizados." },
           ].map((c) => (
             <div key={c.title} className="glass p-6 flex gap-4 items-start">
               <span className="text-2xl shrink-0">{c.icon}</span>
@@ -67,17 +38,13 @@ function StorytellingIntro() {
         </div>
       </section>
 
-      {/* DIVIDER */}
       <div className="max-w-7xl mx-auto px-6">
         <div style={{ borderTop: "1px solid rgba(129,140,248,0.15)" }} />
       </div>
 
       {/* ── BLOQUE 3: LA HISTORIA ── */}
       <section className="px-6 py-32 max-w-5xl mx-auto">
-        <p
-          className="font-mono text-[11px] tracking-[0.2em] uppercase mb-16"
-          style={{ color: "rgba(129,140,248,0.7)" }}
-        >
+        <p className="font-mono text-[11px] tracking-[0.2em] uppercase mb-16" style={{ color: "rgba(129,140,248,0.7)" }}>
           La historia
         </p>
         <div className="space-y-6">
@@ -99,17 +66,13 @@ function StorytellingIntro() {
         </div>
       </section>
 
-      {/* DIVIDER */}
       <div className="max-w-7xl mx-auto px-6">
         <div style={{ borderTop: "1px solid rgba(129,140,248,0.15)" }} />
       </div>
 
       {/* ── BLOQUE 4: LA SOLUCIÓN ── */}
       <section className="px-6 py-32 max-w-5xl mx-auto">
-        <p
-          className="font-mono text-[11px] tracking-[0.2em] uppercase mb-16"
-          style={{ color: "rgba(129,140,248,0.7)" }}
-        >
+        <p className="font-mono text-[11px] tracking-[0.2em] uppercase mb-16" style={{ color: "rgba(129,140,248,0.7)" }}>
           La solución en una frase
         </p>
         <div className="space-y-6">
@@ -124,7 +87,6 @@ function StorytellingIntro() {
             Es un sistema de inteligencia que automatiza un proceso que manualmente consume 40 horas al mes, y lo convierte en un dashboard que{" "}
             <strong style={{ fontWeight: 700 }}>Carlos</strong> puede leer en 5 minutos.
           </p>
-
           <div style={{ marginTop: "3rem" }}>
             <p className="font-mono text-[11px] tracking-[0.2em] uppercase mb-6" style={{ color: "rgba(129,140,248,0.7)" }}>
               Tres cosas concretas
@@ -135,11 +97,7 @@ function StorytellingIntro() {
                 "Identifica qué factores generan satisfacción e insatisfacción — no las estrellas, el texto.",
                 "Genera quick wins y planes de acción priorizados por impacto económico.",
               ].map((item, i) => (
-                <div
-                  key={i}
-                  className="flex gap-5 items-start"
-                  style={{ borderLeft: "3px solid rgba(129,140,248,0.5)", paddingLeft: "1.25rem" }}
-                >
+                <div key={i} className="flex gap-5 items-start" style={{ borderLeft: "3px solid rgba(129,140,248,0.5)", paddingLeft: "1.25rem" }}>
                   <span className="font-mono shrink-0" style={{ fontSize: "11px", color: "rgba(129,140,248,0.7)", marginTop: "6px" }}>
                     0{i + 1}
                   </span>
@@ -150,19 +108,7 @@ function StorytellingIntro() {
               ))}
             </div>
           </div>
-
-          <p
-            className="font-display"
-            style={{
-              fontSize: "clamp(2.25rem, 5vw, 4.5rem)",
-              lineHeight: 1.15,
-              fontWeight: 700,
-              color: "var(--indigo)",
-              borderLeft: "5px solid var(--indigo)",
-              paddingLeft: "1.5rem",
-              marginTop: "4rem",
-            }}
-          >
+          <p className="font-display" style={{ fontSize: "clamp(2.25rem, 5vw, 4.5rem)", lineHeight: 1.15, fontWeight: 700, color: "var(--indigo)", borderLeft: "5px solid var(--indigo)", paddingLeft: "1.5rem", marginTop: "4rem" }}>
             Re-check las convierte en decisiones.
           </p>
         </div>
@@ -173,22 +119,19 @@ function StorytellingIntro() {
 
 export function ProblemPipeline() {
   return (
-    <>
+    <div>
       <StorytellingIntro />
 
-      {/* DIVIDER */}
       <div className="max-w-7xl mx-auto px-6">
         <div style={{ borderTop: "1px solid rgba(129,140,248,0.15)" }} />
       </div>
 
-      {/* ── PIPELINE ── */}
       <section id="pipeline" className="px-6 py-24 max-w-7xl mx-auto">
         <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Data Pipeline</p>
         <h2 className="font-display font-semibold text-4xl md:text-5xl mt-4">Nuestro Pipeline NLP</h2>
         <p className="text-muted-foreground mt-3 max-w-2xl">
           Cada paso fue una decisión deliberada. De 7 millones de reseñas a inteligencia accionable.
         </p>
-
         <div className="relative mt-12">
           <div className="hidden md:block absolute left-6 top-6 bottom-6 w-px border-l-2 border-dotted border-foreground/10" />
           <div className="space-y-6">
@@ -213,10 +156,7 @@ export function ProblemPipeline() {
               },
             ].map((b) => (
               <div key={b.badge} className="glass p-6 md:p-8 flex gap-6 items-start">
-                <div
-                  className="shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center font-mono text-sm font-bold"
-                  style={{ background: "rgba(129,140,248,0.15)", color: "var(--indigo)" }}
-                >
+                <div className="shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center font-mono text-sm font-bold" style={{ background: "rgba(129,140,248,0.15)", color: "var(--indigo)" }}>
                   {b.badge}
                 </div>
                 <div className="flex-1">
@@ -224,15 +164,7 @@ export function ProblemPipeline() {
                   <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{b.body}</p>
                   <div className="flex flex-wrap gap-2 mt-4">
                     {b.pills.map((pill) => (
-                      <span
-                        key={pill}
-                        className="px-3 py-1 rounded-full text-[10px] font-mono"
-                        style={{
-                          background: "rgba(129,140,248,0.08)",
-                          color: "var(--indigo)",
-                          border: "1px solid rgba(129,140,248,0.2)",
-                        }}
-                      >
+                      <span key={pill} className="px-3 py-1 rounded-full text-[10px] font-mono" style={{ background: "rgba(129,140,248,0.08)", color: "var(--indigo)", border: "1px solid rgba(129,140,248,0.2)" }}>
                         {pill}
                       </span>
                     ))}
@@ -243,71 +175,6 @@ export function ProblemPipeline() {
           </div>
         </div>
       </section>
-    </>
-  );
-}
-      {/* SECTION 2 — EL PIPELINE */}
-      <section id="pipeline" className="px-6 py-24 max-w-7xl mx-auto">
-        <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground">Data Pipeline</p>
-        <h2 className="font-display font-semibold text-4xl md:text-5xl mt-4">Nuestro Pipeline NLP</h2>
-        <p className="text-muted-foreground mt-3 max-w-2xl">
-          Cada paso fue una decisión deliberada. De 7 millones de reseñas a inteligencia accionable.
-        </p>
-
-        <div className="relative mt-12">
-          <div className="hidden md:block absolute left-6 top-6 bottom-6 w-px border-l-2 border-dotted border-foreground/10" />
-          <div className="space-y-6">
-            {[
-              {
-                badge: "01",
-                title: "Ingesta y filtrado",
-                body: "Partíamos de 6,99 millones de reseñas en un único archivo JSON, demasiado grande para cargarlo en memoria. Implementamos chunking en bloques de 100K filas y filtramos hasta 127.000 reseñas de restaurantes mexicanos. Eliminamos reviews neutrales (3★) y reseñas de menos de 10 palabras para trabajar solo con opiniones semánticamente útiles.",
-                pills: ["chunking 100K", "127K reseñas", "sin ruido neutral"],
-              },
-              {
-                badge: "02",
-                title: "Procesamiento NLP",
-                body: "Cada reseña pasó por lowercase → puntuación → tokenización → stopwords → lematización con spaCy. El texto limpio se vectorizó con CountVectorizer (10.000+ términos). Usamos LDA con tuning de hiperparámetros evaluado con coherencia c_v, validado con NMF sobre TF-IDF. Ambos convergieron en los mismos 4 factores — consistencia y fiabilidad demostrada.",
-                pills: ["spaCy", "CountVectorizer", "LDA + NMF", "coherencia c_v"],
-              },
-              {
-                badge: "03",
-                title: "Inteligencia accionable",
-                body: "LDA + NMF produjeron una taxonomía de 4 factores: servicio, comida, ambiente y otros. Priorizamos precisión interpretativa antes que forzar clasificaciones poco claras. Feature engineering con star_gap, word_count, sentiment_binary e is_chain. Todo conectado al dashboard en tiempo real vía FastAPI + Railway.",
-                pills: ["star_gap", "word_count", "sentiment_binary", "is_chain", "FastAPI + Railway"],
-              },
-            ].map((b) => (
-              <div key={b.badge} className="glass p-6 md:p-8 flex gap-6 items-start">
-                <div
-                  className="shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center font-mono text-sm font-bold"
-                  style={{ background: "rgba(129,140,248,0.15)", color: "var(--indigo)" }}
-                >
-                  {b.badge}
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-display text-xl font-semibold">{b.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{b.body}</p>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {b.pills.map((pill) => (
-                      <span
-                        key={pill}
-                        className="px-3 py-1 rounded-full text-[10px] font-mono"
-                        style={{
-                          background: "rgba(129,140,248,0.08)",
-                          color: "var(--indigo)",
-                          border: "1px solid rgba(129,140,248,0.2)",
-                        }}
-                      >
-                        {pill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
+    </div>
   );
 }
