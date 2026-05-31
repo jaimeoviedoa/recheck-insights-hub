@@ -10,10 +10,10 @@ export function Results() {
           Carlos tiene <strong style={{ fontWeight: 700 }}>Los Agaves</strong> en Santa Barbara.
         </p>
         <p className="font-display text-muted-foreground" style={{ fontSize: "clamp(1.25rem, 2.5vw, 2rem)", lineHeight: 1.4, fontWeight: 400 }}>
-          NPS +87 · 4.6/5 · 93% sentimiento positivo.
+          NPS +65 · 4.4/5 · 85% sentimiento positivo.
         </p>
         <p className="font-display" style={{ fontSize: "clamp(1.25rem, 2.5vw, 2rem)", lineHeight: 1.4, fontWeight: 400, color: "var(--foreground)" }}>
-          Pero el problema estaba en el <strong style={{ fontWeight: 700 }}>7% negativo oculto.</strong>
+          Pero el problema estaba en el <strong style={{ fontWeight: 700 }}>15% negativo oculto.</strong>
         </p>
         <p className="font-display text-muted-foreground" style={{ fontSize: "clamp(1.1rem, 2vw, 1.5rem)", lineHeight: 1.5, fontWeight: 400 }}>
           Un cliente escribió <strong style={{ fontWeight: 600, color: "var(--foreground)" }}>180 palabras</strong> explicando por qué no volvería. El manager estaba de descanso. Nadie lo detectó.{" "}
@@ -51,9 +51,9 @@ export function Results() {
         <p className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground mb-6">Lo que demuestra</p>
         <div className="space-y-4">
           {[
-            { n: "01", text: "Re-check es real. Corre sobre 127.000 reseñas reales de Yelp." },
+            { n: "01", text: "Re-check es real. Corre sobre 127.000 reseñas reales de Yelp, enriquecidas con Web Intelligence." },
             { n: "02", text: "Ahorra tiempo. 40 horas de lectura manual convertidas en 5 minutos de dashboard." },
-            { n: "03", text: "Aplica lo aprendido. LDA + NMF + feature engineering con datos de producción, no de juguete." },
+            { n: "03", text: "Aplica lo aprendido. Modelos de NLP reales — detección de temas, análisis de sentimiento y patrones — con datos de producción, no de juguete." },
             { n: "04", text: "Escala. Un restaurante en Madrid con 20 reseñas o 800 — el pipeline no cambia, cambia el volumen." },
           ].map((item) => (
             <div key={item.n} className="flex gap-5 items-start" style={{ borderLeft: "3px solid rgba(129,140,248,0.4)", paddingLeft: "1.25rem" }}>
