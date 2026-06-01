@@ -7,11 +7,11 @@ function StorytellingIntro() {
           El origen
         </p>
         <p className="font-display" style={{ fontSize: "clamp(3rem, 8vw, 7rem)", lineHeight: 1.0, fontWeight: 800, letterSpacing: "-0.02em" }}>
-          El 94% de las reseñas online nunca se leen.
+          El 94% de los clientes evita un negocio por una mala reseña.
         </p>
-        <p className="font-display text-muted-foreground mt-8" style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", lineHeight: 1.5, fontWeight: 400, maxWidth: "680px" }}>
-          No porque los dueños no quieran. Sino porque analizar 500 reseñas a mano son{" "}
-          <strong style={{ fontWeight: 700, color: "inherit" }}>40 horas de trabajo</strong> que ningún restaurante tiene.
+       <p className="font-display text-muted-foreground mt-8" style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", lineHeight: 1.5, fontWeight: 400, maxWidth: "680px" }}>
+          Y los dueños no tienen tiempo de leer cuál es el problema, analizar 500 reseñas a mano son{" "}
+          <strong style={{ fontWeight: 700, color: "inherit" }}>40 horas de trabajo.</strong>
         </p>
       </section>
 
@@ -23,7 +23,7 @@ function StorytellingIntro() {
         </h2>
         <div className="grid md:grid-cols-3 gap-5 mt-12">
           {[
-            { icon: "⚠️", title: "Texto no estructurado", body: "Las estrellas dicen cuánto falla el negocio. El texto dice por qué — y nadie lo analiza." },
+            { icon: "⚠️", title: "Texto no estructurado", body: "Las estrellas dicen cuánto falla el negocio. El texto dice por qué  y nadie lo analiza." },
             { icon: "⏱️", title: "Análisis manual imposible", body: "Un restaurante con 500 reseñas necesitaría 40+ horas para leerlas todas manualmente." },
             { icon: "📉", title: "Decisiones sin datos", body: "Sin NLP, los problemas operativos se repiten sin ser detectados ni priorizados." },
           ].map((c) => (
@@ -77,8 +77,8 @@ function StorytellingIntro() {
         </p>
         <div className="space-y-6">
           <p className="font-display" style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)", lineHeight: 1.3, fontWeight: 400 }}>
-            Re-check convierte información cualitativa —{" "}
-            <em>texto desordenado de clientes</em> — en información cuantitativa y accionable para dueños de restaurantes.
+            Re-check convierte información cualitativa, {" "}
+            <em> el texto desordenado de clientes</em> , en información cuantitativa y accionable para dueños de restaurantes.
           </p>
           <p className="font-display text-muted-foreground" style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", lineHeight: 1.5, fontWeight: 400 }}>
             No es un gestor de reseñas. No es marketing.
